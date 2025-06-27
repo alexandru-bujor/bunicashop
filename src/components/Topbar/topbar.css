@@ -1,0 +1,40 @@
+.topbar {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery-message {
+    font-weight: 500;
+}
+
+.phone-numbers {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.phone-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.red-phone {
+    color: #ff4444;
+}
+
+@media (max-width: 768px) {
+    .topbar-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}

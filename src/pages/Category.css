@@ -1,0 +1,213 @@
+.category-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Category Banner */
+.category-banner {
+    position: relative;
+    height: 200px;
+    margin-bottom: 1.5rem;
+    background-color: var(--neutral-100);
+    transition: background-color 0.3s ease;
+}
+
+.category-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-banner-content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--neutral-900);
+}
+
+.category-banner-content p {
+    font-size: 1rem;
+    color: var(--neutral-600);
+}
+
+/* Category Content Layout */
+.category-content {
+    width: 100%;
+}
+
+/* Products Section */
+.products-section {
+    width: 100%;
+}
+
+.category-header {
+    max-width: 1400px;
+    margin: 0 auto 1.5rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-count {
+    font-size: 0.875rem;
+    color: var(--neutral-600);
+}
+
+.sort-section {
+    position: relative;
+}
+
+.sort-select {
+    appearance: none;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--neutral-700);
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.select-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neutral-500);
+    pointer-events: none;
+    font-size: 0.75rem;
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    font-size: 1rem;
+    color: var(--neutral-600);
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-6);
+}
+
+/* Loading Skeleton */
+.loading-skeleton {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-6);
+}
+
+.product-skeleton {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+        90deg,
+        var(--neutral-100) 0%,
+        var(--neutral-200) 50%,
+        var(--neutral-100) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text {
+    height: 20px;
+    margin: var(--spacing-4);
+    background: linear-gradient(
+        90deg,
+        var(--neutral-100) 0%,
+        var(--neutral-200) 50%,
+        var(--neutral-100) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-full);
+}
+
+.skeleton-text.short {
+    width: 60%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .category-content {
+        grid-template-columns: 220px 1fr;
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-banner {
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .category-banner-content {
+        padding: 1rem;
+    }
+
+    .category-banner-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .category-header {
+        margin: 0 1rem 1rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-banner-content h1 {
+        font-size: 1.25rem;
+    }
+
+    .category-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        margin: 0 0.75rem 1rem 0.75rem;
+    }
+
+    .sort-section {
+        width: 100%;
+    }
+
+    .sort-select {
+        width: 100%;
+    }
+} 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syrve Product Fetch</title>
+</head>
+<body>
+<h2>Fetch Syrve Products</h2>
+<button onclick="fetchProducts()">Get Products</button>
+<pre id="output">Waiting...</pre>
+
+<script>
+    async function fetchProducts() {
+        const apiKey = '8d8acc8021d84688a0ff3ac295d25fb1'; // Replace with your Syrve API key
+        const output = document.getElementById('output');
+
+        try {
+            const sessionRes = await fetch('https://api-eu.syrve.live/v2/session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ apiKey })
+            });
+
+            const { sessionToken } = await sessionRes.json();
+            if (!sessionToken) throw new Error('No token returned');
+
+            const productsRes = await fetch('https://api-eu.syrve.live/v2/nomenclature', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionToken}`
+                }
+            });
+
+            const products = await productsRes.json();
+            output.textContent = JSON.stringify(products, null, 2);
+        } catch (err) {
+            output.textContent = '❌ Error: ' + err.message;
+        }
+    }
+</script>
+</body>
+</html>

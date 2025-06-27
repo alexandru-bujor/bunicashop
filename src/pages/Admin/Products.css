@@ -1,0 +1,316 @@
+.products {
+    padding: 2rem;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.products-header h2 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.add-button {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.add-button:hover {
+    background: #27ae60;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin: 0 0 1rem;
+    color: #2c3e50;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2ecc71;
+    margin: 0 0 0.5rem;
+}
+
+.product-category {
+    color: #7f8c8d;
+    margin: 0 0 1rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-button,
+.delete-button {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.edit-button {
+    background: #3498db;
+    color: white;
+}
+
+.edit-button:hover {
+    background: #2980b9;
+}
+
+.delete-button {
+    background: #e74c3c;
+    color: white;
+}
+
+.delete-button:hover {
+    background: #c0392b;
+}
+
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.save-button,
+.cancel-button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.save-button {
+    background: #2ecc71;
+    color: white;
+}
+
+.save-button:hover {
+    background: #27ae60;
+}
+
+.cancel-button {
+    background: #95a5a6;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #7f8c8d;
+}
+
+.products-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.products-loading .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.products-error {
+    text-align: center;
+    padding: 2rem;
+    color: #e74c3c;
+}
+
+.products-error button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.products-error button:hover {
+    background: #2980b9;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.image-upload {
+    margin-top: 1rem;
+}
+
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: #007bff;
+    background-color: #f1f8ff;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.image-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-preview {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
